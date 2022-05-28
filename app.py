@@ -24,7 +24,12 @@ def hello():
        print('Request for hello page received with no name or blank name -- redirecting')
        return redirect(url_for('index'))
 
-
+def upload_file():
+   if request.method == 'POST':
+      f = request.files['file']
+      f.save(secure_filename(f.filename))
+      return 'file uploaded successfully'
+    
 if __name__ == '__main__':
-   app.run()
+   app.run(debug=True)
 #   app.run()
