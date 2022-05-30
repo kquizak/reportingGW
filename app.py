@@ -1,6 +1,7 @@
 from datetime import datetime
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory
-from werkzeug import secure_filename
+from werkzeug.utils import secure_filename
+from werkzeug.datastructures import  FileStorage
 app = Flask(__name__)
 
 
